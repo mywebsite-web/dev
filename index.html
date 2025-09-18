@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AbdulSalam.dev</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #fff;
+            color: #2d2e32;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        header {
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            background: #fff;
+            z-index: 10;
+        }
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        header nav ul {
+            display: flex;
+            list-style: none;
+        }
+        header nav ul li {
+            margin-left: 30px;
+        }
+        header nav ul li a {
+            text-decoration: none;
+            color: #2d2e32;
+            font-weight: 600;
+        }
+        .hero {
+            padding: 150px 0 100px;
+        }
+        .hero .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .hero-content {
+            max-width: 60%;
+        }
+        .hero-content h2 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+        .socials {
+            display: flex;
+        }
+        .socials a {
+            margin-right: 20px;
+            font-size: 1.5rem;
+            color: #2d2e32;
+        }
+        .hero-image {
+            max-width: 30%;
+        }
+        .profile-pic {
+            border-radius: 50%;
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+        }
+        .tech-stack {
+            display: flex;
+            align-items: center;
+            margin-top: 50px;
+        }
+        .tech-stack p {
+            font-weight: 600;
+            margin-right: 20px;
+        }
+        .tech-stack ul {
+            display: flex;
+            list-style: none;
+        }
+        .tech-stack ul li {
+            margin-right: 20px;
+            font-size: 2rem;
+        }
+        #about {
+            padding: 100px 0;
+        }
+        .about-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .about-image {
+            position: relative;
+            flex: 1;
+            margin-right: 40px;
+        }
+        .about-image img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .about-badge {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            background: white;
+            border-radius: 50%;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .about-badge img {
+            width: 50px;
+            margin-bottom: 10px;
+        }
+        .about-badge p {
+            font-weight: bold;
+            font-size: 1rem;
+        }
+        .about-content {
+            flex: 1;
+        }
+        .about-content h3 {
+            font-size: 1rem;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+        .about-content h4 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        .about-content h4 span {
+            color: #ff0000; /* Adjust color for the heart icon or location */
+        }
+        .about-content p {
+            font-size: 1rem;
+        }
+        #projects {
+            padding: 100px 0;
+        }
+        #projects h3 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        #projects > .container > p {
+            text-align: center;
+            font-size: 1.2rem;
+            margin-bottom: 50px;
+        }
+        .project {
+            display: flex;
+            align-items: center;
+            margin-bottom: 50px;
+            background: #f9f9f9;
+            border-radius: 10px;
+            padding: 20px;
+        }
+        .project-image {
+            flex: 1;
+            margin-right: 30px;
+        }
+        .project-image img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .project-content {
+            flex: 1;
+        }
+        .project-content h4 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+        .project-content p {
+            margin-bottom: 10px;
+        }
+        .project-tech {
+            margin-bottom: 10px;
+        }
+        .project-tech span {
+            background: #e0e0e0;
+            padding: 5px 10px;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+        .project-links {
+            display: flex;
+        }
+        .project-links a {
+            margin-right: 20px;
+            text-decoration: none;
+            color: #2d2e32;
+            font-weight: 600;
+        }
+        .project-links a i {
+            margin-left: 5px;
+        }
+        #contact {
+            padding: 100px 0;
+            background: #f9f9f9;
+        }
+        #contact h3 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        #contact > .container > p {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .contact-socials {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+        .contact-socials li {
+            margin: 10px 20px;
+        }
+        .contact-socials a {
+            font-size: 2rem;
+            color: #2d2e32;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        .contact-socials a i {
+            margin-right: 10px;
+        }
+        /* For even projects, reverse layout if wanted */
+        .project:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+        .project:nth-child(even) .project-image {
+            margin-right: 0;
+            margin-left: 30px;
+        }
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            header .container {
+                flex-direction: column;
+            }
+            header nav ul {
+                margin-top: 10px;
+            }
+            header nav ul li {
+                margin-left: 15px;
+                margin-right: 15px;
+            }
+            .hero .container {
+                flex-direction: column;
+                text-align: center;
+            }
+            .hero-content {
+                max-width: 100%;
+                margin-bottom: 30px;
+            }
+            .hero-image {
+                max-width: 100%;
+            }
+            .profile-pic {
+                width: 150px;
+                height: 150px;
+            }
+            .tech-stack {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .tech-stack ul {
+                margin-top: 10px;
+            }
+            .about-container {
+                flex-direction: column;
+            }
+            .about-image {
+                margin-right: 0;
+                margin-bottom: 30px;
+            }
+            .about-badge {
+                bottom: -20px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            .project {
+                flex-direction: column;
+            }
+            .project-image {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+            .project:nth-child(even) {
+                flex-direction: column;
+            }
+            .project:nth-child(even) .project-image {
+                margin-left: 0;
+                margin-bottom: 20px;
+            }
+            .contact-socials {
+                flex-direction: column;
+            }
+            .contact-socials li {
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>AbdulSalam.dev</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Front-End Web Developer 👋</h2>
+                <p>Hi, I'm Abdul Salam. A passionate Front-end Web Developer based in Nigeria. 📍</p>
+                <div class="socials">
+                    <a href="https://shorturl.at/rvLVu" target="_blank"><i class="devicon-linkedin-plain"></i></a>
+                    <a href="https://github.com/mywebsite-web" target="_blank"><i class="devicon-github-original"></i></a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="pics.jpg" alt="Abdul Salam" class="profile-pic">
+            </div>
+        </div>
+        <div class="tech-stack container">
+            <p>Tech Stack |</p>
+            <ul>
+                <li><i class="devicon-html5-plain colored"></i></li>
+                <li><i class="devicon-css3-plain colored"></i></li>
+                <li><i class="devicon-javascript-plain colored"></i></li>
+                <li><i class="devicon-react-original colored"></i></li>
+                <li><i class="devicon-tailwindcss-plain colored"></i></li>
+                <li><i class="devicon-solidity-plain colored"></i></li>
+            </ul>
+        </div>
+    </section>
+    <section id="about">
+        <div class="container about-container">
+            <div class="about-image">
+                <img src="lpt.jpg" alt="Workspace">
+                <div class="about-badge">
+                    <img src="icon.jpg" alt="Developer Icon">
+                    <p>FRONT-END<br>WEB<br>DEVELOPER</p>
+                </div>
+            </div>
+            <div class="about-content">
+                <h3>ABOUT ME</h3>
+                <h4>A dedicated Front-end Developer based in Nigeria 📍</h4>
+                <p>Hi, I’m Abdulsalam — a self-taught junior software engineer with a foundation in frontend development and a growing interest in backend and blockchain technologies. My journey into tech started with curiosity and determination, teaching myself to code and sharpening my skills by building projects and solving real problems.
+
+I’m currently leveling up in backend development while also exploring the exciting possibilities of blockchain. I enjoy turning ideas into working applications, experimenting with new tools, and continuously learning along the way.
+
+As a junior developer, I bring fresh energy, adaptability, and a strong hunger to grow. My focus is on building clean, functional solutions while developing into a well-rounded full-stack engineer. For me, coding is more than a skill — it’s a journey of creativity, problem-solving, and constant improvement.</p>
+            </div>
+        </div>
+    </section>
+    <section id="projects">
+        <div class="container">
+            <h3>Portfolio</h3>
+            <p>Each project is a unique piece of development 🛠</p>
+            <div class="project">
+                <div class="project-image">
+                    <img src="project1.png" alt="Project 1">
+                </div>
+                <div class="project-content">
+                    <h4>DRIVOXE 🚗</h4>
+                    <p>Find the perfect ride for every journey with our reliable car rental services. Whether you need a budget-friendly compact, a family SUV, or a luxury car for a special occasion, we’ve got you covered. Easy booking, transparent pricing, and 24/7 customer support — rent a car today and hit the road with confidence.</p>
+                    <div class="project-tech">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JS</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" target="_blank">Code <i class="devicon-github-original"></i></a>
+                        <a href="https://shorturl.at/2SxzZ" target="_blank">Live Demo <i class="fas fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="project">
+                <div class="project-image">
+                    <img src="project2.png" alt="Project 2">
+                </div>
+                <div class="project-content">
+                    <h4>CryptoDash🪙</h4>
+                    <p>Stay ahead of the markets with real-time cryptocurrency data, portfolio tracking, and interactive analytics. Our dashboard gives you instant access to live prices, market trends, trading volume, and performance charts for top coins and tokens.
+
+Track your portfolio growth, set personalized watchlists, and get alerts on price movements so you never miss an opportunity. With a clean, intuitive design, the dashboard is built for both beginners exploring crypto and advanced traders looking for deep insights.
+
+Whether you want to monitor Bitcoin, Ethereum, or altcoins, CryptoPulse helps you make smarter, faster, and more informed trading decisions.</p>
+                    <div class="project-tech">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JS</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" target="_blank">Code <i class="devicon-github-original"></i></a>
+                        <a href="https://shorturl.at/uH3Mb" target="_blank">Live Demo <i class="fas fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="project">
+                <div class="project-image">
+                    <img src="project3.png" alt="Project 3">
+                </div>
+                <div class="project-content">
+                    <h4>Gymate 🏋</h4>
+                    <p>More than just a gym, Gymate is a fitness family. Our studio is built to make you feel comfortable, supported, and inspired. With fun group workouts, personalized training, and a welcoming community, we help you stay committed and enjoy the journey to a healthier, stronger you.</p>
+                    <div class="project-tech">
+                        <span>React</span>
+                        <span>Tailwind CSS</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" target="_blank">Code <i class="devicon-github-original"></i></a>
+                        <a href="https://shorturl.at/w8Cq8" target="_blank">Live Demo <i class="fas fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="project">
+                <div class="project-image">
+                    <img src="project4.png" alt="Project 4">
+                </div>
+                <div class="project-content">
+                    <h4>Ariks Academy 🏫</h4>
+                    <p>Ariks Academy is a place of learning, growth, and excellence. We provide a balanced education that combines strong academics, character development, and extracurricular opportunities. With dedicated teachers, modern facilities, and a supportive environment, we prepare students to succeed in school, in life, and in the future.</p>
+                    <div class="project-tech">
+                        <span>React</span>
+                        <span>CSS</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" target="_blank">Code <i class="devicon-github-original"></i></a>
+                        <a href="https://shorturl.at/cAVeb" target="_blank">Live Demo <i class="fas fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="project">
+                <div class="project-image">
+                    <img src="project5.png" alt="Project 5">
+                </div>
+                <div class="project-content">
+                    <h4>PulseTrack ❤️</h4>
+                    <p>Our Pulse Tracker app helps you monitor your heart rate in real time, giving you insights into your health and fitness. With accurate tracking, personalized reports, and easy-to-read analytics, you can stay on top of your well-being anytime, anywhere. Whether you’re working out, resting, or managing your health, Pulse Tracker keeps you informed and in control.</p>
+                    <div class="project-tech">
+                        <span>React</span>
+                        <span>Tailwind CSS</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" target="_blank">Code <i class="devicon-github-original"></i></a>
+                        <a href="https://shorturl.at/R3ILV" target="_blank">Live Demo <i class="fas fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="contact">
+        <div class="container">
+            <h3>Contact</h3>
+            <p>Get in touch via my social platforms</p>
+            <ul class="contact-socials">
+                <li><a href="https://wa.me/qr/Y7WROJMVVGI3B1" target="_blank"><i class="fab fa-whatsapp" style="color: #25D366;"></i> WhatsApp</a></li>
+                <li><a href="https://shorturl.at/rvLVu" target="_blank"><i class="devicon-linkedin-plain colored"></i> LinkedIn</a></li>
+                <li><a href="https://github.com/mywebsite-web" target="_blank"><i class="devicon-github-original colored"></i> GitHub</a></li>
+                <li><a href="https://x.com/SalamDev_?s=08" target="_blank"><i class="devicon-twitter-original colored"></i> Twitter</a></li>
+                <li><a href="https://www.instagram.com/salam_devv?utm_source=qr&igsh=eXpkbThjMDY3MHlu" target="_blank"><i class="fab fa-instagram" style="color: #E4405F;"></i> Instagram</a></li>
+            </ul>
+        </div>
+    </section>
+</body>
+</html>
